@@ -1,18 +1,48 @@
-## Getting Started
+# Java EXAM - TAP
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+You can use the resources available in [TAP repository](TAP-master.zip)
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## 1. Use TAP2/solutions code (accounts)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### 1.a
+Load a list of accounts from the accounts.txt file.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### 1.b
+Make a select function which allows us to execute the following query:  
+SELECT NAME FROM ACCOUNTS WHERE *some_condition*
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### 1.c
+Make the select function Generic so that we can recover any/all of the fields from the Accounts. For example:  
+SELECT * FROM ACCOUNTS WHERE *some_condition*  
+SELECT NAME, BALANCE FROM ACCOUNTS WHERE *some_condition*  
+SELECT TYPE FROM ACCOUNTS WHERE *some_condition*
 
-## Dependency Management
+### 1.d
+Allow for ordering of the results including a Comparator<T>. For example:  
+SELECT BALANCE FROM ACCOUNTS ORDER BY BALANCE
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Demonstrate in the code the use of closures.
+
+**Topics:** PREDICATE, FUNCTION, CLOSURE, STREAMS, GENERICS
+
+---
+
+## 2. Use TAP3/state full directory
+
+Create a Decorator of Package that allows us to register Observers and notify of any state changes.  
+Do not make changes to the original classes/interfaces in TAP3/state.
+
+The observers should print the object reference and the new state.  
+Demonstrate state changes and notifications in the main client code.
+
+**Topics:** STATE, DECORATOR, OBSERVER
+
+---
+
+## 3. Use TAP4/dynamicproxy2
+
+Use a Dynamic Proxy to make the observers implemented in the previous exercise print the updates in a file instead of the console, adding also the date and time of the update.
+
+**Topics:** OBSERVER, REFLECTION → DYNAMIC PROXY
