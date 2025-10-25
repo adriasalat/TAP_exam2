@@ -1,7 +1,4 @@
 # Java EXAM - TAP
-
-You can use the resources available in [TAP repository](TAP-master.zip)
-
 ---
 
 ## 1. Use TAP2/solutions code (accounts)
