@@ -37,9 +37,3 @@ Demonstrate state changes and notifications in the main client code.
 **Topics:** STATE, DECORATOR, OBSERVER
 
 ---
-
-## 3. Use TAP4/dynamicproxy2
-
-Use a Dynamic Proxy to make the observers implemented in the previous exercise print the updates in a file instead of the console, adding also the date and time of the update.
-
-**Topics:** OBSERVER, REFLECTION → DYNAMIC PROXY
