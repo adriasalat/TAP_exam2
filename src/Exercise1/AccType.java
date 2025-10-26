@@ -1,4 +1,4 @@
-package Exercise1;
+package Exercise3;
 
 /**
  * @author Adrià Salat
