@@ -2,7 +2,11 @@ package Exercise2;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Predicate;
 
+/**
+ * @author Adrià Salat
+ */
 public class File implements AComponent {
 
 	private String name;
@@ -41,8 +45,6 @@ public class File implements AComponent {
 		return path + name;
 	}
 
-
-
 	public String getName() {
 		return name;
 	}
@@ -51,9 +53,6 @@ public class File implements AComponent {
 		this.name = name;
 	}
 
-
-	
-	
 	public List<AComponent> toList() {
 		List<AComponent> result = new LinkedList<AComponent>();
 		result.add(this);
@@ -74,8 +73,16 @@ public class File implements AComponent {
 		this.size = size;
 	}
 
-
 	public int size() {
 		return size;
+	}
+
+	// Solution for the exercise 2.a
+	public List<File> query(Predicate<File> condition) {
+		List<File> result = new LinkedList<>();
+
+		if (condition.test(this)) { result.add(this); }
+
+		return result;
 	}
 }

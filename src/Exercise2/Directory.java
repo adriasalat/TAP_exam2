@@ -1,15 +1,19 @@
 package Exercise2;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Predicate;
 
+/**
+ * @author Adrià Salat
+ */
 public class Directory implements AComponent,Iterable<AComponent> {
 
 	private String name;
 	private List <AComponent> children;
 	private AComponent parent = null;
-	
 
 	public Directory(String name) {
 		this.name = name;
@@ -31,7 +35,6 @@ public class Directory implements AComponent,Iterable<AComponent> {
 		System.out.println(name);
 		for (AComponent child:children)
 			child.ls();
-		
 	}
 
 	public List<String> collect() {
@@ -81,5 +84,15 @@ public class Directory implements AComponent,Iterable<AComponent> {
 	public String getName() {
 		return name;
 	}
-	
+
+	// Solution for the exercise 2.a
+	public List<File> query(Predicate<File> condition) {
+		List<File> result = new ArrayList<>();
+
+		for (AComponent c : children) {
+			result.addAll(c.query(condition));
+		}
+
+		return result;
+	}
 }
